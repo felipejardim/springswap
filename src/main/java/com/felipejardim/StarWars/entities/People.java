@@ -45,26 +45,26 @@ public class People {
     @Column(name = "url")
     private String url;
 
-    @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name="Gender_idGender", referencedColumnName = "idGender")
-    @JsonBackReference
+    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @JoinColumn(name="Gender_idgender")
+    @JsonBackReference("genderRef")
     private Gender gender;
 
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "birth_year_idbirth_year", referencedColumnName = "idbirth_year")
-    @JsonBackReference
+    @JsonBackReference("birthRef")
     private BirthYear birthYear;
 
     @OneToMany(mappedBy = "people")
-    @JsonManagedReference
+    @JsonManagedReference("eyeRef")
     private List<EyeColor> eyeColors;
 
     @OneToMany(mappedBy = "people")
-    @JsonManagedReference
+    @JsonManagedReference("skinRef")
     private List<SkinColor> skinColors;
 
     @OneToMany(mappedBy = "people")
-    @JsonManagedReference
+    @JsonManagedReference("hairRef")
     private List<HairColor> hairColors;
 
 }

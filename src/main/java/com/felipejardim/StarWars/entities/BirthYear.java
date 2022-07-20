@@ -1,6 +1,8 @@
 package com.felipejardim.StarWars.entities;
 
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -24,6 +26,7 @@ public class BirthYear {
     @Column(name = "era")
     private String era;
 
-    @OneToOne
+    @OneToOne(mappedBy = "birthYear")
+    @JsonManagedReference("birthRef")
     private People people;
 }

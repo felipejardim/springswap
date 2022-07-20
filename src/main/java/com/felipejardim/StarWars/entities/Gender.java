@@ -22,8 +22,8 @@ public class Gender {
     @Column(name = "description")
     private String description;
 
-    @OneToMany(mappedBy = "gender")
-    @JsonManagedReference
+    @OneToMany(mappedBy = "gender", cascade = CascadeType.ALL)
+    @JsonManagedReference("genderRef")
     private List<People> people;
 
 }

@@ -18,12 +18,12 @@ public class SkinColor {
     @ManyToOne(cascade = CascadeType.ALL)
     @MapsId("colorId")
     @JoinColumn(name = "Color_idColor")
-    @JsonBackReference
+    @JsonBackReference("skinColor")
     Color color;
 
     @ManyToOne(cascade = CascadeType.ALL)
     @MapsId("peopleId")
     @JoinColumn(name = "People_idPeople")
-    @JsonBackReference
+    @JsonBackReference("skinRef")
     People people;
 }

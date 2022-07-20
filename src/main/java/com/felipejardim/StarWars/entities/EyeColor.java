@@ -18,12 +18,12 @@ public class EyeColor {
     @ManyToOne(cascade = CascadeType.ALL)
     @MapsId("colorId")
     @JoinColumn(name = "Color_idColor")
-    @JsonBackReference
+    @JsonBackReference("eyeColor")
     Color color;
 
     @ManyToOne(cascade = CascadeType.ALL)
     @MapsId("peopleId")
     @JoinColumn(name = "People_idPeople")
-    @JsonBackReference
+    @JsonBackReference("eyeRef")
     People people;
 }

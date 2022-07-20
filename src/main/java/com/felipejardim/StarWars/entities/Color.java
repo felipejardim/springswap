@@ -25,15 +25,15 @@ public class Color {
     private String description;
 
     @OneToMany(mappedBy = "color")
-    @JsonManagedReference
+    @JsonManagedReference("eyeColor")
     private List<EyeColor> eyeColor;
 
     @OneToMany(mappedBy = "color")
-    @JsonManagedReference
+    @JsonManagedReference("skinColor")
     private List<SkinColor> skinColors;
 
     @OneToMany(mappedBy = "color")
-    @JsonManagedReference
+    @JsonManagedReference("hairColor")
     private List<HairColor> hairColors;
 
 }

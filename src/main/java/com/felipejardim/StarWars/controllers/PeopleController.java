@@ -2,6 +2,7 @@ package com.felipejardim.StarWars.controllers;
 
 import com.felipejardim.StarWars.entities.People;
 import com.felipejardim.StarWars.services.PeopleService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -10,6 +11,7 @@ import java.util.List;
 @RequestMapping("/people/")
 public class PeopleController {
 
+    @Autowired
     PeopleService peopleService;
 
     @GetMapping("")
